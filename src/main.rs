@@ -1,4 +1,3 @@
-extern crate bigdecimal;
 extern crate diesel;
 
 use std::env;
