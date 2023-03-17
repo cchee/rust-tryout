@@ -1,0 +1,41 @@
+[package]
+name = "rust-tryout"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "lib_api"
+path = "src/lib.rs"
+
+[[bin]]
+name = "api_rust"
+path = "src/main.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+diesel = { version = "2.0.3", features = ["postgres", "r2d2", "uuid", "chrono", "numeric"]}
+r2d2 = "0.8"
+uuid = { version = "1.2.2", features = ["serde", "v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+lazy_static = "1.4"
+dotenvy = "0.15.6"
+tokio = { version = "1.26.0", features = ["full"] }
+actix-web = "4.2.1"
+actix-rt = "2.7.0"
+env_logger = "0.10.0"
+listenfd = "1.0.0"
+log = "0.4"
+serde = { version = "1.0.156", features = ["derive"] }
+serde_json = "1.0.94"
+serde_path_to_error = "0.1.10"
+serde_with = "2.3.1"
+pg_bigdecimal = "0.1.5"
+thiserror = "1.0.39"
+validator = "0.16.0"
+validator_derive = "0.16.0"
+rusqlite = "0.28.0"
+reqwest = { version = "0.11", features = ["json"] }
+utoipa = { features = ["actix_extras"], version = "3.1.0" }
+utoipa-swagger-ui = { features = ["actix-web"], version = "3.0.1" }
