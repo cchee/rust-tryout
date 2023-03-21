@@ -12,24 +12,24 @@ use crate::schema::cost_items;
 use crate::utils::check;
 
 #[serde_as]
-#[derive(Serialize, Deserialize, AsChangeset, Insertable)]
+#[derive(Debug, Serialize, Deserialize, AsChangeset, Insertable)]
 #[diesel(table_name = cost_items)]
 pub struct CostItem {
     pub name: String,
     #[serde_as(as = "DisplayFromStr")]
     pub price: BigDecimal,
-    pub notes: String,
+    pub notes: Option<String>,
 }
 
 #[serde_as]
-#[derive(Serialize, Deserialize, Queryable, Insertable, ToSchema)]
+#[derive(Debug, Serialize, Deserialize, Queryable, Insertable, ToSchema)]
 #[diesel(table_name = cost_items)]
 pub struct CostItems {
     pub id: i64,
     pub name: String,
     #[serde_as(as = "DisplayFromStr")]
     pub price: BigDecimal,
-    pub notes: String,
+    pub notes: Option<String>,
 }
 
 impl CostItems {
