@@ -1,7 +1,6 @@
 use std::collections::{HashMap, HashSet};
 
 use bigdecimal::BigDecimal;
-// use pg_bigdecimal::BigDecimal;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use serde_with::{serde_as, DisplayFromStr};
